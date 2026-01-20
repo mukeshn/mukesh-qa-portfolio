@@ -1,6 +1,7 @@
 "use client";
 
-import { Container, Typography, Grid, Card, CardContent } from "@mui/material";
+import { Container, Typography, Card, CardContent } from "@mui/material";
+import Grid from "@mui/material/Grid";
 
 const projects = [
   {
@@ -26,10 +27,18 @@ export default function Projects() {
 
       <Grid container spacing={3}>
         {projects.map((project) => (
-          <Grid item xs={12} md={4} key={project.title}>
+          <Grid
+            component="div"
+            item
+            xs={12}
+            md={4}
+            key={project.title}
+          >
             <Card>
               <CardContent>
-                <Typography fontWeight="bold">{project.title}</Typography>
+                <Typography fontWeight="bold">
+                  {project.title}
+                </Typography>
                 <Typography color="text.secondary">
                   {project.desc}
                 </Typography>
